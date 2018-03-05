@@ -1,0 +1,11 @@
+.idea/
+ConfigCenter_Learning
+Learning.iml
+target/
+test-output/
+/target
+.project
+.settings/
+.git/
+.classpath
+bash.exe.stackdump
