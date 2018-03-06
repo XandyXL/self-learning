@@ -17,8 +17,10 @@ public class Graph {
     private int adjMat[][];
     //顶点数
     private int nVerts;
-    //深度优先搜索
+    //深度优先搜索-栈
     private Stack theStack;
+    //广度优先搜索-队列
+    private Queue theQueue;
 
     public Graph() {
 
@@ -34,7 +36,7 @@ public class Graph {
         }
 
         theStack = new Stack();
-
+        theQueue = new Queue();
     }
 
     /**
@@ -96,14 +98,47 @@ public class Graph {
         while (!theStack.isEmpty()) {
             int v = getAdjUnvisitedVernex(theStack.peek());
             if (v == -1) {
+                //弹出
                 theStack.pop();
             } else {
                 //标记访问
                 verticesList[v].wasVisited = true;
                 //展示
                 displayVertex(v);
-                //出栈
+                //入栈
                 theStack.push(v);
+            }
+        }
+
+        //重置访问
+        for (int j = 0; j < nVerts; j++) {
+            verticesList[j].wasVisited = false;
+        }
+    }
+
+
+    /**
+     * 广度优先搜索
+     */
+    public void bfs() {
+        //标记访问
+        verticesList[0].wasVisited = true;
+        //展示
+        displayVertex(0);
+        //入队
+        theQueue.insert(0);
+
+        int v2;
+
+        while (!theQueue.isEmpty()) {
+            int v1 = theQueue.remove();
+            while ((v2 = getAdjUnvisitedVernex(v1)) != -1) {
+                //标记访问
+                verticesList[v2].wasVisited = true;
+                //展示
+                displayVertex(v2);
+                //入队
+                theQueue.insert(v2);
             }
         }
 
@@ -136,9 +171,16 @@ public class Graph {
         //DE
         theGraph.addEdge(3, 4);
 
-        System.out.println("Visit:");
+        System.out.println("dfs Visit:");
         theGraph.dfs();
         System.out.println();
+        System.out.println("------------");
+
+        System.out.println("bfs Visit:");
+        theGraph.bfs();
+        System.out.println();
+
+
 
     }
 
