@@ -3,7 +3,7 @@ package com.xandy.datastructure.graph;
 /**
  * 无向无权图
  *
- * @author liang.xu01@ucarinc.com
+ * @author xandy
  * @Description
  * @since 2018/3/5 15:34
  */

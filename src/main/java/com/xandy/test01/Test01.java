@@ -5,14 +5,14 @@
  * @Project: Learning
  * @Package: com.xandy.test01 
  * @Description: TODO
- * @author: liang.xu01@ucarinc.com  
+ * @author: xandy
  * @date: 2017年7月3日 上午9:36:06 
- * @version: V1.0   
+ * @version: V1.0
  */
 package com.xandy.test01;
 
 /**
- * @author xuliang04@zuche.com
+ * @author xandy
  * @version 
  * @since 2017年7月3日
  */
