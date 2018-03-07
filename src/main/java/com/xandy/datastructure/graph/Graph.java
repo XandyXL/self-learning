@@ -85,6 +85,40 @@ public class Graph {
 
 
     /**
+     *最小生成树
+     */
+    public void mst() {
+        //标记访问
+        verticesList[0].wasVisited = true;
+        //入栈
+        theStack.push(0);
+
+        while (!theStack.isEmpty()) {
+            int currentVertex = theStack.peek();
+            int v = getAdjUnvisitedVernex(currentVertex);
+            if (v == -1) {
+                //弹出
+                theStack.pop();
+            } else {
+                //标记访问
+                verticesList[v].wasVisited = true;
+                //展示
+                displayVertex(currentVertex);
+                displayVertex(v);
+                System.out.print(" ");
+                //入栈
+                theStack.push(v);
+            }
+        }
+
+        //重置访问
+        for (int j = 0; j < nVerts; j++) {
+            verticesList[j].wasVisited = false;
+        }
+    }
+
+
+    /**
      * 深度优先搜索
      */
     public void dfs() {
@@ -115,6 +149,7 @@ public class Graph {
             verticesList[j].wasVisited = false;
         }
     }
+
 
 
     /**
@@ -178,6 +213,11 @@ public class Graph {
 
         System.out.println("bfs Visit:");
         theGraph.bfs();
+        System.out.println();
+        System.out.println("------------");
+
+        System.out.println("mst Visit:");
+        theGraph.mst();
         System.out.println();
 
 
