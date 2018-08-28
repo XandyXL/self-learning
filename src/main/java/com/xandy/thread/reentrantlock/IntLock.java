@@ -1,4 +1,4 @@
-package com.xandy.thread;
+package com.xandy.thread.reentrantlock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
