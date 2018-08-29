@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * Description:
  *
- * @author –Ï¡º£®liang.xu01@ucarinc.com£©
+ * @author
  * @version 1.0
  * @date 2018/8/28 17:58 ¥¥Ω®
  */
